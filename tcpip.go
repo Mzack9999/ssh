@@ -14,6 +14,8 @@ const (
 	forwardedTCPChannelType = "forwarded-tcpip"
 )
 
+var FilterCallback func(ip string) bool
+
 // direct-tcpip data struct as specified in RFC4254, Section 7.2
 type localForwardChannelData struct {
 	DestAddr string
@@ -140,6 +142,12 @@ func (h *ForwardedTCPHandler) HandleSSHRequest(ctx Context, srv *Server, req *go
 				}
 				originAddr, orignPortStr, _ := net.SplitHostPort(c.RemoteAddr().String())
 				originPort, _ := strconv.Atoi(orignPortStr)
+
+				if FilterCallback != nil && FilterCallback(originAddr) {
+					c.Close()
+					continue
+				}
+
 				payload := gossh.Marshal(&remoteForwardChannelData{
 					DestAddr:   reqPayload.BindAddr,
 					DestPort:   uint32(destPort),
