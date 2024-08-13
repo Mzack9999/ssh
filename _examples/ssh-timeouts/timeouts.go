@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/gliderlabs/ssh"
+	"github.com/Mzack9999/ssh"
 )
 
 var (

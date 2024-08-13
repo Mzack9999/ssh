@@ -5,7 +5,7 @@ Run docker containers over SSH.  You can even pipe things into them too!
 We're going to build JQ as an SSH service using the Glider Labs SSH package.  If you haven't installed GoLang and docker yet, see the doc's for help getting your environment setup.
 
 Install the Glider Labs SSH package  
-`go get github.com/gliderlabs/ssh`
+`go get github.com/Mzack9999/ssh`
 
 Build the example docker container with  
 `docker build --rm -t jq .` 
@@ -54,33 +54,33 @@ Connection to localhost closed.
 
 JQ's help text!  It's working!  Now let's pipe some json into our SSH service and marvel at the awesomeness.
 
-`curl -s https://api.github.com/orgs/gliderlabs | ssh jq@localhost -p 2222 .`
+`curl -s https://api.github.com/orgs/Mzack9999 | ssh jq@localhost -p 2222 .`
 
 ```json
 {
-  "login": "gliderlabs",
+  "login": "Mzack9999",
   "id": 8484931,
-  "url": "https://api.github.com/orgs/gliderlabs",
-  "repos_url": "https://api.github.com/orgs/gliderlabs/repos",
-  "events_url": "https://api.github.com/orgs/gliderlabs/events",
-  "hooks_url": "https://api.github.com/orgs/gliderlabs/hooks",
-  "issues_url": "https://api.github.com/orgs/gliderlabs/issues",
-  "members_url": "https://api.github.com/orgs/gliderlabs/members{/member}",
-  "public_members_url": "https://api.github.com/orgs/gliderlabs/public_members{/member}",
+  "url": "https://api.github.com/orgs/Mzack9999",
+  "repos_url": "https://api.github.com/orgs/Mzack9999/repos",
+  "events_url": "https://api.github.com/orgs/Mzack9999/events",
+  "hooks_url": "https://api.github.com/orgs/Mzack9999/hooks",
+  "issues_url": "https://api.github.com/orgs/Mzack9999/issues",
+  "members_url": "https://api.github.com/orgs/Mzack9999/members{/member}",
+  "public_members_url": "https://api.github.com/orgs/Mzack9999/public_members{/member}",
   "avatar_url": "https://avatars3.githubusercontent.com/u/8484931?v=4",
   "description": "",
   "name": "Glider Labs",
   "company": null,
-  "blog": "http://gliderlabs.com",
+  "blog": "http://Mzack9999.com",
   "location": "Austin, TX",
-  "email": "team@gliderlabs.com",
+  "email": "team@Mzack9999.com",
   "has_organization_projects": true,
   "has_repository_projects": true,
   "public_repos": 29,
   "public_gists": 0,
   "followers": 0,
   "following": 0,
-  "html_url": "https://github.com/gliderlabs",
+  "html_url": "https://github.com/Mzack9999",
   "created_at": "2014-08-18T23:25:37Z",
   "updated_at": "2017-08-21T09:52:17Z",
   "type": "Organization"
